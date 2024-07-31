@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8-auto rounded border p-4 m-4">
+                <h2 class="text-center mb-5">
+                  Edit Product
+                </h2> 
+                <form action="/createdProduct" method="post" enctype="multipart/form-data" th:object="${productDto}">
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Id
+                            <input readonly class="form-controll" th:feild="${products.id}">
+                        
+                        </label>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Name
+                            <input class="form-controll" th:feild="${productDto.name}">
+                        
+                        </label>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Brand
+                            <input class="form-controll" th:feild="${productDto.brand}">
+                        
+                        </label>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4">Category</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-select" th:field="${productDto.Category}">
+                            <option value="other">Other</option>
+                            <option value="Phones">Phones</option>
+                            <option value="laptop">Laptop</option>
+                            <option value="computer">computer</option>
+                            <option value="earphone">EarPhone</option>
+                        </select>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">price
+                            <input class="form-controll" th:feild="${productDto.price}">
+                        
+                        </label>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Description
+                            <input class="form-controll" th:feild="${productDto.Description}">
+                        
+                        </label>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Image
+                            <input class="form-controll" th:feild="${productDto.image}">
+                        
+                        </label>
+                    </div>
+                    <div class="row">
+                        <div class="Offset-sm-4 d-grid-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                        <div class="Offset-sm-4 d-grid-4">
+                            <button type="submit" class="btn btn-primary">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
